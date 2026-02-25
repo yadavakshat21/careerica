@@ -3,52 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Careerica - Coming Soon</title>
+<title>Careerica — Coming Soon</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --ink:#0D0D0D;
+  --cream:#F5F0E8;
+  --saffron:#E8760A;
+  --gold:#D4A843;
+}
+
 body{
-    margin:0;
-    font-family:Poppins, sans-serif;
-    background: linear-gradient(135deg,#4b0082,#7b2cbf);
-    color:white;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+  margin:0;
+  height:100vh;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* soft background glow */
+body::before{
+  content:'';
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(232,118,10,0.18), transparent 70%);
+  top:-200px;
+  left:-200px;
 }
 
 .container{
-    animation: fadeIn 2s ease-in-out;
+  animation:fadeUp 1.5s ease;
 }
 
 .logo{
-    font-size:70px;
-    font-weight:600;
-    letter-spacing:3px;
+  margin-bottom:15px;
+  animation:float 5s ease-in-out infinite;
 }
 
-.logo span{
-    color:#ffcc00;
+.brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:70px;
+  letter-spacing:6px;
 }
 
 .tagline{
-    font-size:22px;
-    margin-top:10px;
-    opacity:0.9;
+  font-family:'Dancing Script',cursive;
+  color:var(--gold);
+  font-size:26px;
+  margin-top:-10px;
+}
+
+.divider{
+  width:60px;
+  height:2px;
+  background:linear-gradient(to right, transparent, var(--saffron), transparent);
+  margin:20px auto;
 }
 
 .coming{
-    margin-top:20px;
-    font-size:18px;
-    opacity:0.8;
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.6);
 }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+.dot{
+  width:7px;
+  height:7px;
+  background:var(--saffron);
+  display:inline-block;
+  border-radius:50%;
+  margin-right:6px;
+  animation:blink 1.5s infinite;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+@keyframes blink{
+  0%,100%{opacity:1}
+  50%{opacity:0.3}
 }
 </style>
 </head>
@@ -56,11 +105,45 @@ body{
 <body>
 
 <div class="container">
-    <div class="logo">
-        <span>ᑕ</span>AREERICA
-    </div>
-    <div class="tagline">we build future</div>
-    <div class="coming">🚀 Website Launching Soon</div>
+
+  <div class="logo">
+    <!-- Careerica Diamond C -->
+    <svg width="75" height="85" viewBox="0 0 80 90">
+      <path fill-rule="evenodd"
+        d="
+          M74 20
+          L46 2
+          L2 45
+          L46 88
+          L74 70
+          L60 70
+          L33 45
+          L60 20
+          Z
+
+          M60 20
+          L38 8
+          L16 45
+          L38 82
+          L60 70
+          L48 70
+          L28 45
+          L48 20
+          Z"
+        fill="#E8760A"/>
+    </svg>
+  </div>
+
+  <div class="brand">AREERICA</div>
+  <div class="tagline">we build future</div>
+
+  <div class="divider"></div>
+
+  <div class="coming">
+    <span class="dot"></span>
+    website launching soon
+  </div>
+
 </div>
 
 </body>
