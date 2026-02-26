@@ -367,9 +367,9 @@ footer {
   .cards { grid-template-columns:repeat(2,1fr); }
 }
 @media(max-width:768px){
-  nav { padding:0 20px; height:60px; }
-  .pill span:not(.pdot) { display:none; }
-  .pill { padding:9px 13px; }
+  nav { padding:10px 16px; height:auto; min-height:56px; flex-wrap:nowrap; gap:10px; }
+  .pill span:not(.pdot) { display:inline; }
+  .pill { padding:7px 12px; font-size:8px; letter-spacing:.14em; }
 
   .hero { padding:110px 20px 80px; }
   .hero-c svg { width:50px; height:60px; }
@@ -389,6 +389,10 @@ footer {
 @media(max-width:480px){
   .hero-name { font-size:clamp(24px,7vw,36px); }
   .form-row button { padding:14px 16px; font-size:8px; }
+  .logo-name { font-size:12px; }
+  .logo-tag  { font-size:9px; }
+  .pill { font-size:7.5px; letter-spacing:.1em; padding:6px 10px; }
+  .pdot { width:5px; height:5px; }
 }
 </style>
 </head>
@@ -564,12 +568,12 @@ footer {
     </svg>
     <span class="footer-name">CAREERICA</span>
     <span class="footer-sep">|</span>
-    <a href="mailto:info@careerica.in" class="footer-mail">info@careerica.in</a>
+    <a href="/cdn-cgi/l/email-protection#5a33343c351a393b283f3f2833393b743334" class="footer-mail"><span class="__cf_email__" data-cfemail="96fff8f0f9d6f5f7e4f3f3e4fff5f7b8fff8">[email&#160;protected]</span></a>
   </div>
   <span class="footer-copy">&copy; 2026 CAREERICA. All rights reserved.</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ─── Nav sticky ─── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -632,7 +636,7 @@ cardsIO.observe(document.getElementById('cards-grid'));
 /* ─── Email submit ─── */
 // STEP: After you sign up on formspree.io and get your form ID,
 // replace 'REPLACE_WITH_YOUR_FORM_ID' with it (e.g. 'xwkgpqrz')
-const FORMSPREE = 'REPLACE_WITH_YOUR_FORM_ID';
+const FORMSPREE = 'mjgeloby';
 
 async function doSubmit() {
   const inp  = document.getElementById('email-inp');
@@ -667,18 +671,4 @@ async function doSubmit() {
       await fetch(`https://formspree.io/f/${FORMSPREE}`, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify({ email, page: 'careerica.in coming-soon' })
-      });
-    } catch(e) {}
-  }
-
-  row.style.display = 'none';
-  ok.style.display  = 'block';
-}
-
-document.getElementById('email-inp').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSubmit();
-});
-</script>
-</body>
-</html>
+        body:    JSON.stringify({ email, page: 'careerica.in coming-soon'
